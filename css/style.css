@@ -1,0 +1,253 @@
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,300;0,500;1,300&display=swap');
+
+
+/* Normalize */
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+/* Variables*/
+:root{
+    /* Colores */
+    --a:#1A5D1A;
+    --b:#F1C93B;
+    --c:#B4B4B8;
+    --d:#d4d5d9;
+    --negro:black;
+    /* Gradientes */
+    --grad-A:#F4EAE0;
+    
+    /* Fuentes */
+    --titulo:'Raleway', sans-serif;
+    
+}
+
+a{
+    color: var(--negro);
+
+}
+
+@keyframes navbar{
+    0%{
+        transform: translateX(-100%);
+    }
+}
+
+body{
+    background: var(--grad-A) fixed no-repeat;
+    background-size: cover;
+}
+
+header{
+    font-family:var(--titulo);
+    font-weight: 500;
+
+    background-color: var(--c);
+
+    height: 40px;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    box-shadow: rgba(0, 0, 0, 0.077) 0 10px 15px;
+
+}
+
+.options{
+    display: none;
+}
+
+.nav{
+    display: none;
+    flex-flow: column;
+    position: absolute;
+    row-gap: 10px;
+    left: 0;
+    top: 35px;
+    padding: 20px;
+    border-radius: 0px 0 20px 0px;
+
+    font-size: medium;
+    background: var(--c);
+    color: black;
+    
+    animation-name: navbar;
+    animation-duration: 0.5s;
+}
+
+.nav a{
+    color: black;
+    text-decoration-line: none;
+}
+
+.nav a:hover{
+    text-shadow: rgb(255, 255, 255) 0 0 20px;
+    color: white;
+    text-decoration-line: underline;
+}   
+
+.bars-options i:hover{
+    color: white;
+    text-shadow: rgb(255, 255, 255) 0 0 20px;
+}
+
+#toggle-nav:checked ~ .nav{
+    display: flex;
+}
+
+
+.fa-solid:hover, .fa-brands:hover{
+    color: white;
+    text-shadow: rgb(255, 255, 255) 0 0 20px;
+}
+
+main{
+    padding-top: 40px;
+}
+
+.inicio{
+    background:url(../assets/img\ fondo.jpg);
+    background-size: cover;
+
+    
+    height: 50vh;
+
+    font-family: var(--titulo);
+    text-align: center;
+    color: white;
+
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+}
+
+
+/* Titulo en imagen de inicio. */
+.titulos{
+    font-family: var(--titulo);
+    font-size: xx-large;
+    color: white;
+}
+
+.inicio p{
+    font-size: medium;
+    margin-top: 20px;
+}
+
+
+/* cartas de productos */
+.caja-prod{
+    
+    font-family: var(--titulo);
+    margin: 30px 100px;
+    height: 200px;
+
+    background-color: var(--d);
+    border-radius: 15px;
+
+    display: flex;
+    justify-content: space-between;
+}
+
+.caja-prod img{
+    margin: 10px;
+    width: 250px;
+    border-radius: 15px;
+}
+
+/* Descripcion de productos */
+.info{
+    margin: 10px;
+    font-size: larger;
+
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+}
+
+.info b, .info p{
+    margin-bottom:10px;
+}
+
+footer{
+    background-color: var(--c);
+    height: 200px;
+    font-family:var(--titulo) ;
+    
+}
+
+.columnas{
+    padding: 30px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.columnas div{
+    margin-top: 15px;
+}
+
+@media (max-width:480px){
+    .inicio{
+        height: 300px;
+    }
+    .caja-prod{
+        margin: 15px 15px;
+        height: 100px;
+    }
+    .caja-prod img{
+        width: 150px;
+    }
+    .info{
+        font-size: small;
+    }
+    .info b, .info p{
+        margin-bottom:5px;
+    }
+}
+@media (min-width:481px) and (max-width:768px){
+    header{
+        height: 50px;
+        font-size: x-large;
+        padding: 20px;
+    }
+    .inicio {
+        height: 400px;
+    }
+}
+
+@media(min-width:769px) and (max-width:1279px){
+    .inicio{
+        background: url(../assets/img\ fondo.jpg) center no-repeat;
+        background-size: cover;
+        height: 50vh;
+    }
+}
+
+@media (min-width:1280px) {
+    header{
+        height: 60px;
+        font-size: x-large;
+        padding: 20px;
+    }
+    .inicio{
+        background:url(../assets/img\ fondo.jpg) center;
+        background-size: cover;
+
+        height: 50vh;
+    }
+    .titulos{
+        font-size: 2.7rem;
+    }
+    .inicio p{
+        font-size: x-large;
+    }
+    footer {
+        font-size: larger;
+    }
+    
+}
