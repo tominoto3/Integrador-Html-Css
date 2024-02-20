@@ -17,17 +17,16 @@
     --c:#B4B4B8;
     --d:#d4d5d9;
     --negro:black;
-    /* Gradientes */
+
+    /* Fondo */
     --grad-A:#F4EAE0;
     
     /* Fuentes */
     --titulo:'Raleway', sans-serif;
-    
 }
 
 a{
     color: var(--negro);
-
 }
 
 @keyframes navbar{
@@ -39,6 +38,13 @@ a{
 body{
     background: var(--grad-A) fixed no-repeat;
     background-size: cover;
+    transition-duration: 0.5s;
+}
+
+body.dark-body{
+    background: rgba(0, 0, 0, 0.85) fixed no-repeat;
+    background-size: cover;
+    color: white;
 }
 
 header{
@@ -46,22 +52,30 @@ header{
     font-weight: 500;
 
     background-color: var(--c);
+    box-shadow: rgba(0, 0, 0, 0.077) 0 10px 15px;
 
     height: 40px;
     padding: 10px;
+    width: 100%;
+
     display: flex;
     justify-content: space-between;
     align-items: center;
     position: fixed;
-    width: 100%;
-    box-shadow: rgba(0, 0, 0, 0.077) 0 10px 15px;
 
+    transition-duration: 0.3s;
+}
+
+header.dark-header{
+    background-color:#535C91;
+    color: white;
 }
 
 .options{
     display: none;
 }
 
+/* Barra de opciones */
 .nav{
     display: none;
     flex-flow: column;
@@ -80,30 +94,85 @@ header{
     animation-duration: 0.5s;
 }
 
+.dark-header .nav{
+    background-color:#535C91;
+    transition-duration: 0.3s;
+}
+
 .nav a{
     color: black;
     text-decoration-line: none;
 }
 
 .nav a:hover{
-    text-shadow: rgb(255, 255, 255) 0 0 20px;
+    text-shadow: rgba(255, 255, 255, 0.759) 0 0 5px;
     color: white;
     text-decoration-line: underline;
 }   
 
 .bars-options i:hover{
     color: white;
-    text-shadow: rgb(255, 255, 255) 0 0 20px;
-}
+    text-shadow:  rgba(255, 255, 255, 0.759) 0 0 5px;
+} 
 
 #toggle-nav:checked ~ .nav{
     display: flex;
 }
 
-
-.fa-solid:hover, .fa-brands:hover{
+main .fa-solid:hover, .fa-brands:hover{
     color: white;
     text-shadow: rgb(255, 255, 255) 0 0 20px;
+}
+
+.fa-burger:hover{
+    font-size: 22px;
+}
+
+/* Section del logo */
+.cuadro-tecla{
+    background-color: white;
+    width: 70px;
+    height: 30px;
+
+    font-size: large;
+    padding: 10px;
+    border-radius: 20px;
+    
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.logo i{
+    margin-right: auto;
+}
+
+.dark-cuadro{
+    background-color: rgba(0, 0, 0, 0.126);
+    width: 70px;
+    height: 30px;
+
+    font-size: large;
+    padding: 10px;
+    border-radius: 20px;
+    
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    
+}
+
+/* Espacio para cambiar tema */
+.mode{
+    width: 150px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.mode p{
+    font-size: x-large ;
+    font-family: var(--titulo);
 }
 
 main{
@@ -137,21 +206,27 @@ main{
 .inicio p{
     font-size: medium;
     margin-top: 20px;
+    font-weight: 200;
 }
 
+/* Seccion de productos */
+.Productos{
+    margin: 15px 0px;
+    display: flex;
+    flex-flow: column;
+    transition-duration: 0.5s;
+}
 
 /* cartas de productos */
 .caja-prod{
-    
-    font-family: var(--titulo);
-    margin: 30px 100px;
-    height: 200px;
-
     background-color: var(--d);
     border-radius: 15px;
-
     display: flex;
-    justify-content: space-between;
+    justify-content: space-between; 
+
+    margin: 15px 100px;
+    height: 200px;
+    
 }
 
 .caja-prod img{
@@ -160,14 +235,19 @@ main{
     border-radius: 15px;
 }
 
+.dark-caja .caja-prod{
+    background-color: #161A30;
+    color: white;
+}
+
 /* Descripcion de productos */
 .info{
-    margin: 10px;
-    font-size: larger;
-
     display: flex;
     flex-flow: column;
     justify-content: center;
+    font-family: var(--titulo);
+    font-size: larger;
+    margin: 10px;
 }
 
 .info b, .info p{
@@ -178,7 +258,11 @@ footer{
     background-color: var(--c);
     height: 200px;
     font-family:var(--titulo) ;
-    
+    transition-duration: 0.5s;
+}
+
+footer.dark-footer {
+    background-color: #535C91;
 }
 
 .columnas{
@@ -191,12 +275,16 @@ footer{
     margin-top: 15px;
 }
 
+
 @media (max-width:480px){
     .inicio{
         height: 300px;
     }
+    .Productos{
+        margin: 7px 0px;
+    }
     .caja-prod{
-        margin: 15px 15px;
+        margin: 7px 15px;
         height: 100px;
     }
     .caja-prod img{
@@ -208,7 +296,17 @@ footer{
     .info b, .info p{
         margin-bottom:5px;
     }
+    footer{
+        height: 170px;
+    }
+    .columnas{
+        padding: 25px 5px 0px 10px;
+    }
+    .columnas a{
+        font-size: 0.9rem;
+    }
 }
+
 @media (min-width:481px) and (max-width:768px){
     header{
         height: 50px;
@@ -221,10 +319,20 @@ footer{
 }
 
 @media(min-width:769px) and (max-width:1279px){
+    header{
+        height: 50px;
+        font-size: x-large;
+    }
+
+    .titulos{
+        font-size: 3.5rem;
+    }
+
     .inicio{
         background: url(../assets/img\ fondo.jpg) center no-repeat;
         background-size: cover;
-        height: 50vh;
+
+        height: 40vh;
     }
 }
 
@@ -234,14 +342,20 @@ footer{
         font-size: x-large;
         padding: 20px;
     }
+
+    .nav{
+        margin-top: 25px;
+    }
+
     .inicio{
         background:url(../assets/img\ fondo.jpg) center;
         background-size: cover;
+        
 
         height: 50vh;
     }
     .titulos{
-        font-size: 2.7rem;
+        font-size: 4rem;
     }
     .inicio p{
         font-size: x-large;
